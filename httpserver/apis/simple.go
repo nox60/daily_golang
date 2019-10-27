@@ -21,5 +21,4 @@ func SimpleQuery(c *gin.Context) {
 		"msg":  msg,
 		"user": user,
 	})
-
 }
