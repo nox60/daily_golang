@@ -7,7 +7,7 @@ import (
 )
 
 func QueryUser(id int64) (models.User, error) {
-	row := pool.QueryRow("select `accountId`, `userName` from `tb_users` where `accountId` = ?", id)
+	row := pool.QueryRow("select `account_id`, `user_name` from `t_user` where `account_id` = ?", id)
 
 	user := models.User{}
 	if err := row.Scan(&user.ID, &user.UserName); err != nil {

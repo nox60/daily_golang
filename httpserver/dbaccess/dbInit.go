@@ -25,10 +25,10 @@ import (
 func newPool() *sql.DB {
 	log.Println("Init database...")
 	cfg := mysql.NewConfig()
-	cfg.User = "root"
-	cfg.Passwd = "xxxx.COM"
+	cfg.User = "dev"
+	cfg.Passwd = "dev@2019"
 	cfg.Net = "tcp"
-	cfg.Addr = "www.xxxx.cn:18992"
+	cfg.Addr = "172.16.56.80:3306"
 	cfg.DBName = "cjfh"
 	dsn := cfg.FormatDSN()
 
