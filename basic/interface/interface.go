@@ -34,7 +34,7 @@ func (s Student) TypeCal() string {
 }
 
 //对接口的实现3
-func (s EmptyStr) TypeCal() string {
+func (*EmptyStr) TypeCal() string {
 	return "还没有考上蓝翔"
 }
 
@@ -42,7 +42,7 @@ func main() {
 	worker := Worker{Type: 0, Name: "小华"}
 	student := Student{Name: "小明"}
 	empty := EmptyStr{}
-	workers := []TypeCalculator{worker, student, empty}
+	workers := []TypeCalculator{worker, student, &empty}
 	for _, v := range workers {
 		fmt.Println(v.TypeCal())
 	}
