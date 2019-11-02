@@ -25,13 +25,15 @@ type PaymentStrategy interface {
 	Pay(*PaymentContext)
 }
 
-type Cash struct{}
+type Cash struct {
+}
 
 func (*Cash) Pay(ctx *PaymentContext) {
 	fmt.Printf("Pay $%d to %s by cash", ctx.Money, ctx.Name)
 }
 
-type Bank struct{}
+type Bank struct {
+}
 
 func (*Bank) Pay(ctx *PaymentContext) {
 	fmt.Printf("Pay $%d to %s by bank account %s", ctx.Money, ctx.Name, ctx.CardID)
