@@ -36,5 +36,6 @@ func main() {
 	cash.Pay()
 	bank := PaymentContext{Name: "bank", CardID: "", Money: 456, payment: &Bank{}}
 	bank.Pay()
-
+	bank2 := PaymentContext{Name: "bank", CardID: "", Money: 45446, payment: &Bank{}}
+	bank2.Pay()
 }
