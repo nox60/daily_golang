@@ -28,10 +28,10 @@ type Bank struct {
 
 func (*Bank) Pay(ctx *PaymentContext) {
 	fmt.Println("Pay $%d to %s by bank account %s", ctx.Money, ctx.Name, ctx.CardID)
-
 }
 
 func main() {
+	//类似java，把算法传进去
 	cash := PaymentContext{Name: "Ada", CardID: "", Money: 123, payment: &Cash{}}
 	cash.Pay()
 	bank := PaymentContext{Name: "bank", CardID: "", Money: 456, payment: &Bank{}}
