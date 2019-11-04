@@ -46,4 +46,22 @@ func main() {
 	for _, v := range workers {
 		fmt.Println(v.TypeCal())
 	}
+
+	empty.TypeCal()
+
+	s := SimpleImpl{}
+
+	s.SimpleMethod()
+}
+
+type NoName interface {
+	SimpleMethod() string
+}
+
+type SimpleImpl struct {
+}
+
+func (s *SimpleImpl) SimpleMethod() string {
+	fmt.Println("--->")
+	return "done"
 }
