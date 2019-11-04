@@ -10,22 +10,22 @@ package main
 import "fmt"
 
 type Subject struct {
-	observers []Observer
-	context   string
+	readers []Reader
+	context string
 }
 
 func NewSubject() *Subject {
 	return &Subject{
-		observers: make([]Observer, 0),
+		readers: make([]Reader, 0),
 	}
 }
 
-func (s *Subject) Register(o Observer) {
-	s.observers = append(s.observers, o)
+func (s *Subject) Register(o Reader) {
+	s.readers = append(s.readers, o)
 }
 
 func (s *Subject) notify() {
-	for _, o := range s.observers {
+	for _, o := range s.readers {
 		o.Update(s)
 	}
 }
