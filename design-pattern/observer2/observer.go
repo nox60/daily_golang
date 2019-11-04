@@ -43,8 +43,8 @@ type Reader struct {
 	name string
 }
 
-func NewReader(name string) *Reader {
-	return &Reader{
+func NewReader(name string) Reader {
+	return Reader{
 		name: name,
 	}
 }
