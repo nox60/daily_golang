@@ -1,4 +1,4 @@
-package observer
+package main
 
 /*
  * 观察者模式，顾名思义，是对象或者线程对某一对象或者线程进行持续性的关注，一旦被关注的对象或线程发生任何改变，能够及时的通知观察者，已做出正确的应对。
@@ -51,4 +51,20 @@ func NewReader(name string) *Reader {
 
 func (r *Reader) Update(s *Subject) {
 	fmt.Printf("%s receive %s\n", r.name, s.context)
+}
+
+func main() {
+	subject := NewSubject()
+	reader1 := NewReader("reader1")
+	reader2 := NewReader("reader2")
+	reader3 := NewReader("reader3")
+	subject.Attach(reader1)
+	subject.Attach(reader2)
+	subject.Attach(reader3)
+
+	subject.UpdateContext("observer mode")
+	// Output:
+	// reader1 receive observer mode
+	// reader2 receive observer mode
+	// reader3 receive observer mode
 }
