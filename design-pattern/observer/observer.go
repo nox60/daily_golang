@@ -20,7 +20,7 @@ func NewSubject() *Subject {
 	}
 }
 
-func (s *Subject) Attach(o Observer) {
+func (s *Subject) Register(o Observer) {
 	s.observers = append(s.observers, o)
 }
 
@@ -58,9 +58,10 @@ func main() {
 	reader1 := NewReader("reader1")
 	reader2 := NewReader("reader2")
 	reader3 := NewReader("reader3")
-	subject.Attach(reader1)
-	subject.Attach(reader2)
-	subject.Attach(reader3)
+
+	subject.Register(reader1)
+	subject.Register(reader2)
+	subject.Register(reader3)
 
 	subject.UpdateContext("observer mode")
 	// Output:
