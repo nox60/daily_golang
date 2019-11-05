@@ -49,7 +49,7 @@ func main() {
 
 	empty.TypeCal()
 
-	s := SimpleImpl{}
+	s := SimpleImpl{Name: "aaa"}
 
 	s.SimpleMethod()
 }
@@ -59,9 +59,11 @@ type NoName interface {
 }
 
 type SimpleImpl struct {
+	Name string
 }
 
 func (s *SimpleImpl) SimpleMethod() string {
-	fmt.Println("--->")
+	fmt.Println("---> ", s.Name)
+
 	return "done"
 }
