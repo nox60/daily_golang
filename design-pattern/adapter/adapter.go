@@ -1,4 +1,8 @@
-package adapter
+package main
+
+import (
+	"fmt"
+)
 
 //Target 是适配的目标接口
 type Target interface {
@@ -38,4 +42,14 @@ type adapter struct {
 //Request 实现Target接口
 func (a *adapter) Request() string {
 	return a.SpecificRequest()
+}
+
+//var expect = "adaptee method"
+
+func main() {
+	adaptee := NewAdaptee()
+	target := NewAdapter(adaptee)
+	res := target.Request()
+
+	fmt.Printf("expect: adaptee method, actual: %s", res)
 }
