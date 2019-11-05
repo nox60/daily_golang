@@ -44,8 +44,6 @@ func (a *adapter) Request() string {
 	return a.SpecificRequest()
 }
 
-//var expect = "adaptee method"
-
 func main() {
 	adaptee := NewAdaptee()
 	target := NewAdapter(adaptee)
