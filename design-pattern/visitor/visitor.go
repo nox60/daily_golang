@@ -7,3 +7,11 @@ type Customer interface {
 type Visitor interface {
 	Visit(Customer)
 }
+
+type EnterpriseCustomer struct {
+	name string
+}
+
+type CustomerCol struct {
+	customers []Customer
+}
