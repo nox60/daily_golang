@@ -62,3 +62,12 @@ func (*ServiceRequestVisitor) Visit(customer Customer) {
 		fmt.Printf("serving individual customer %s\n", c.name)
 	}
 }
+
+type AnalysisVisitor struct{}
+
+func (*AnalysisVisitor) Visit(customer Customer) {
+	switch c := customer.(type) {
+	case *EnterpriseCustomer:
+		fmt.Printf("analysis enterprise customer %s\n", c.name)
+	}
+}
