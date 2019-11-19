@@ -31,6 +31,13 @@ func (r *RequestChain) HaveRight(money int) bool {
 	return true
 }
 
+//SoftwareManager struct{}
+type SoftwareManager struct{}
+
+func (*SoftwareManager) HaveRight(money int) bool {
+	return money < 500
+}
+
 //三种角色定义
 type ProjectManager struct{}
 
@@ -93,4 +100,9 @@ func (*GeneralManager) HandleFeeRequest(name string, money int) bool {
 	}
 	fmt.Printf("General manager don't permit %s %d fee request\n", name, money)
 	return false
+}
+
+func main() {
+	softwareManager := SoftwareManager{}
+	fmt.Println(softwareManager.HaveRight(11))
 }
