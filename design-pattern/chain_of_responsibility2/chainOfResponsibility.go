@@ -104,5 +104,5 @@ func (*GeneralManager) HandleFeeRequest(name string, money int) bool {
 
 func main() {
 	softwareManager := SoftwareManager{}
-	fmt.Println(softwareManager.HaveRight(11))
+	fmt.Println(softwareManager.HaveRights(11))
 }
