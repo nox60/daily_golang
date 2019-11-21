@@ -10,7 +10,11 @@ func main() {
 	fmt.Println(c)
 	fmt.Println("-------")
 	vehi := builder.VehicleProduct{}
-	builder := builder.ManufacturingDirector{}
-	builder.SetBuilder(vehi)
+	//builder := builder.ManufacturingDirector{}
+	carbuilder := builder.CarBuilder{}
+	carbuilder.VehicleProduct = vehi
+	car := carbuilder.SetSeats(4).SetStructure("ss").SetWheels(4).GetVehicle()
+
+	fmt.Println(car)
 
 }
