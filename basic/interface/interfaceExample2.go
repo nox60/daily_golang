@@ -12,6 +12,10 @@ type AnotherInterface interface {
 	AnotherMethod() bool
 }
 
+type ThirdInterface interface {
+	FirstMethod() string
+}
+
 type Implement1 struct {
 	Type int
 	Name string
@@ -64,8 +68,14 @@ func main() {
 
 	workers := []AnotherInterface{implement1, implement2, &implement3}
 
+	thirdWorkers := []ThirdInterface{implement1, implement2, &implement3}
+
 	for _, v := range workers {
 		fmt.Println(v.AnotherMethod())
+	}
+
+	for _, v := range thirdWorkers {
+		fmt.Println(v.FirstMethod())
 	}
 
 }
