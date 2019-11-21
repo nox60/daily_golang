@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 //定义接口
 type Interface1 interface {
@@ -78,4 +81,12 @@ func main() {
 		fmt.Println(v.FirstMethod())
 	}
 
+	implement3.SecondMethod()
+
+	fmt.Println(reflect.TypeOf(implement3))
+
+	/*
+	 * 总结：1. 只要实现了对应的所有的方法，就是相关接口的实现。
+	 *
+	 */
 }
