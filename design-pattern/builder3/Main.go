@@ -14,7 +14,5 @@ func main() {
 	carbuilder := builder.CarBuilder{}
 	carbuilder.VehicleProduct = vehi
 	car := carbuilder.SetSeats(4).SetStructure("ss").SetWheels(4).GetVehicle()
-
 	fmt.Println(car)
-
 }
