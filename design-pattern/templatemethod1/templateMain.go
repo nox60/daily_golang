@@ -2,7 +2,6 @@ package main
 
 import (
 	"./template"
-	"fmt"
 )
 
 func main() {
@@ -11,6 +10,5 @@ func main() {
 	template.Implement = &ftpDownloader
 	template.Download("", "")
 
-	httpDownloader := template.HttpDownloader{}
-	fmt.Println(httpDownloader)
+
 }
