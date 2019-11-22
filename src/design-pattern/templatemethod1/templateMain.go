@@ -1,12 +1,12 @@
 package main
 
 import (
-	"daily_golang/src"
+	. "./templateMethod"
 )
 
 func main() {
-	ftpDownloader := src.FtpDownloader{}
-	template := src.Template{}
+	ftpDownloader := FtpDownloader{}
+	template := Template{}
 	template.Implement = &ftpDownloader
 	template.Download("", "")
 }

@@ -1,17 +1,17 @@
 package main
 
 import (
-	"daily_golang/src"
+	. "./builder"
 	"fmt"
 )
 
 func main() {
-	c := src.Test{Name: "aa"}
+	c := Test{Name: "aa"}
 	fmt.Println(c)
 	fmt.Println("-------")
-	vehi := src.VehicleProduct{}
+	vehi := VehicleProduct{}
 	//builder := builder.ManufacturingDirector{}
-	carbuilder := src.CarBuilder{}
+	carbuilder := CarBuilder{}
 	carbuilder.VehicleProduct = vehi
 	car := carbuilder.SetSeats(4).SetStructure("ss").SetWheels(4).GetVehicle()
 	fmt.Println(car)

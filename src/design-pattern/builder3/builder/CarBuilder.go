@@ -1,30 +1,28 @@
 package builder
 
-import "daily_golang/src"
-
 type Test struct {
 	Name string
 }
 
 type CarBuilder struct {
-	VehicleProduct src.VehicleProduct
+	VehicleProduct VehicleProduct
 }
 
-func (c *CarBuilder) SetWheels(wheels int) src.BuildProcess {
+func (c *CarBuilder) SetWheels(wheels int) BuildProcess {
 	c.VehicleProduct.Wheels = wheels
 	return c
 }
 
-func (c *CarBuilder) SetSeats(seats int) src.BuildProcess {
+func (c *CarBuilder) SetSeats(seats int) BuildProcess {
 	c.VehicleProduct.Seats = seats
 	return c
 }
 
-func (c *CarBuilder) SetStructure(structure string) src.BuildProcess {
+func (c *CarBuilder) SetStructure(structure string) BuildProcess {
 	c.VehicleProduct.Structure = structure
 	return c
 }
 
-func (c *CarBuilder) GetVehicle() src.VehicleProduct {
+func (c *CarBuilder) GetVehicle() VehicleProduct {
 	return c.VehicleProduct
 }
