@@ -8,12 +8,11 @@ type Implement interface {
 }
 
 type Downloader interface {
-	Download(uri string)
+	Download(url string, savePath string)
 }
 
 type Template struct {
-	Implement
-	Uri string
+	Implement Implement
 }
 
 func (t *Template) Download(url string, savePath string) {
