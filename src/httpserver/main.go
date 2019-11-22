@@ -1,11 +1,11 @@
 package main
 
 import (
-	. "daily_golang/httpserver/utils"
+	"daily_golang/src"
 )
 
 func main() {
 	//defer db.SqlDB.Close()
-	router := InitRouter()
+	router := src.InitRouter()
 	router.Run(":8080")
 }
