@@ -62,10 +62,17 @@ func (w Implement3) AnotherMethod() bool {
 	return true
 }
 
+func TestFunc(interface1 Interface1) {
+	fmt.Println("")
+}
+
 func main() {
 	implement1 := Implement1{Type: 0, Name: "小华"}
 	implement2 := Implement2{Name: "小明"}
 	implement3 := Implement3{}
+
+	TestFunc(&implement3)
+
 	//workers := []Interface1{implement1, implement2, &implement3}
 	//上面这行代码要报错，因为，Implement1和Implement2并没有实现 SecondMethod, 只有把一个接口里定义完的所有方法全部实现了，才能算是对该接口的完整实现。
 
