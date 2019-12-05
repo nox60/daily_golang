@@ -1,11 +1,12 @@
 package main
 
 import (
-	. "./template"
+	. "./templateMethod"
 )
 
 func main() {
 	ftpDownloader := FtpDownloader{}
 	template := Template{}
 	template.Implement = &ftpDownloader
+	template.Download("", "")
 }

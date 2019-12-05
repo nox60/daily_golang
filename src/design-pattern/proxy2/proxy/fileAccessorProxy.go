@@ -1,6 +1,9 @@
 package proxy
 
-import "fmt"
+import (
+	"daily_golang/src"
+	"fmt"
+)
 
 type FileAccessorProxy struct {
 	UserType string
@@ -9,7 +12,7 @@ type FileAccessorProxy struct {
 func (f *FileAccessorProxy) ReadFile(filePath string) {
 	if f.UserType == "user" {
 		fmt.Printf("Current user: %s \n", f.UserType)
-		fileAccessor := fileAccessorImpl{}
+		fileAccessor := src.fileAccessorImpl{}
 		fileAccessor.ReadFile(filePath)
 	} else if f.UserType == "guest" {
 		fmt.Printf("Current user: %s \n", f.UserType)
